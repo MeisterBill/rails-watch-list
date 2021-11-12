@@ -1,6 +1,8 @@
 <h1><%= @list.name %></h1>
 <div class="container">
 <% @bookmarks.each do |bookmark| %>
+  <div><% url = "https://image.tmdb.org/t/p/w1#{bookmark.movie.poster_url}"%>
+            <%= image_tag url, alt:"poster", width: "300px" %>
   <div class="card"><%= bookmark.movie.title %> : <%= bookmark.comment %></div>
   <%= link_to "Remove", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
