@@ -1,0 +1,5 @@
+<%= simple_form_for([@list, @bookmark], class: 'form') do |f| %>
+  <%= f.association :movie, label: 'add a movie to your list', error: 'Username is mandatory, please specify one' %>
+  <%= f.input :comment, label: 'add a movie to your list', error: 'Username is mandatory, please specify one' %>
+  <%= f.submit %>
+<% end %>
